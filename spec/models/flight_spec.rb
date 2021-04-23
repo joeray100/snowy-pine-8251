@@ -18,4 +18,12 @@ RSpec.describe Flight, type: :model do
     @passenger_2 = @flight_3.passengers.create!(name: "Tyna", age: 30)
     @passenger_3 = @flight_3.passengers.create!(name: "Craig", age: 15)
   end
+
+  it "#passengers" do
+    expect(Flight.passengers).to eq([@passenger_1.name, @passenger_2.name, @passenger_3.name])
+  end
+
+  it "#airline" do
+    expect(Flight.airline).to eq([@airline_1.name])
+  end
 end
